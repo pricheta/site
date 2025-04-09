@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Химические элементы</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .elements-sidebar {
+            flex: 0 0 280px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            height: fit-content;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .content-side {
+            flex: 1;
+            max-width: 800px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #FF6B00;
+            margin: 0 0 15px 0;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        h2 {
+            color: #555;
+            font-size: 15px;
+            margin: 15px 0 8px 0;
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #e0e0e0;
+        }
+
+        .form {
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #FF6B00;
+            box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
+        }
+
+        button {
+            background-color: #FF6B00;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #e05e00;
+        }
+
+        .response {
+            padding: 10px;
+            background-color: #fafafa;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        /* Стили для списка элементов */
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 6px;
+        }
+
+        .element-brick {
+            background-color: white;
+            border-radius: 4px;
+            padding: 5px 3px;
+            text-align: center;
+            font-size: 13px;
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.15s;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .element-brick:hover {
+            border-color: #FF6B00;
+            background-color: #fff5f0;
+            transform: translateY(-1px);
+        }
+
+        .group-container {
+            margin-bottom: 15px;
+        }
+
+        .recipe-step {
+            white-space: pre;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 3px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .elements-sidebar {
+                flex: 1;
+                max-width: 100%;
+            }
+
+            .elements-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="elements-sidebar">
+            <div class="container">
+                <h1>Доступные элементы</h1>
+                {% for group, elements in grouped_elements.items %}
+                <div class="group-container">
+                    <h2>{{ group.value }}</h2>
+                    <div class="elements-grid">
+                        {% for element in elements %}
+                        <div class="element-brick" onclick="insertElementNameAndSubmit('{{ element.name }}')">
+                            {{ element.name }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="content-side">
+            {% if recipe %}
+            <div class="container">
+                <h1>Рецепт</h1>
+                <div class="response">
+                    {% for step in recipe %}
+                        <div class="recipe-step">{{ step }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="container">
+                <h1>Получение рецепта</h1>
+                <form method="GET" class="form" id="recipeForm">
+                    <div class="form-group">
+                        <label for="elementName">Название элемента</label>
+                        <input type="text" id="elementName" name="element_name" required value="{{ element_name }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="elementAmount">Количество</label>
+                        <input type="number" id="elementAmount" name="element_amount" required min="1" value="{{ element_amount }}">
+                    </div>
+
+                    <button type="submit">Получить рецепт</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://github.com/pricheta/ss14_chemistry_helper" target="_blank">Исходный код на GitHub</a>
+    </div>
+
+    <script>
+        function insertElementNameAndSubmit(elementName) {
+            document.getElementById('elementName').value = elementName;
+            document.getElementById('elementAmount').focus();
+            document.getElementById('recipeForm').submit();
+        }
+    </script>
+</body>
+</html>
