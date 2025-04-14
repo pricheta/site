@@ -11,6 +11,7 @@ AVAILABLE_ELEMENT_GROUPS = [
     ElementGroup.GASP,
     ElementGroup.CELLULAR,
     ElementGroup.BOTANIC,
+    ElementGroup.OTHER,
 ]
 
 

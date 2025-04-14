@@ -312,3 +312,11 @@ falanhymyne = Element(
     ],
     group=ElementGroup.CELLULAR,
 )
+space_cleaner = Element(
+    "Космический очиститель",
+    [
+        (water, 1 / 2),
+        (ammonia, 1 / 2),
+    ],
+    group=ElementGroup.OTHER,
+)
