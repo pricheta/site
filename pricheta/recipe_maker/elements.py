@@ -262,6 +262,15 @@ diphenhydramine = Element(
     group=ElementGroup.TOXIN,
     temperature="выше 378К",
 )
+ethylredoxazine = Element(
+    "Этилредоксразин",
+    [
+        (oxygen, 1 / 3),
+        (diloven, 1 / 3),
+        (carbon, 1 / 3),
+    ],
+    group=ElementGroup.TOXIN,
+)
 hyronalyne = Element(
     "Хироналин",
     [
