@@ -52,13 +52,29 @@ potassium = Element("Калий")
 nitrogen = Element("Азот")
 radium = Element("Радий")
 ethanol = Element("Этанол")
+welding_fuel = Element("Сварочное топливо")
 
 
+oil = Element(
+    "Масло",
+    [
+        (hydrogen, 1/3),
+        (carbon, 1/3),
+        (welding_fuel, 1/3),
+    ],
+)
 ammonia = Element(
     "Аммиак",
     [
         (hydrogen, 3/4),
         (nitrogen, 1/4),
+    ],
+)
+diethylamine = Element(
+    "Диэтиламин",
+    [
+        (ethanol, 1/2),
+        (ammonia, 1/2),
     ],
 )
 inaprovaline = Element(
@@ -233,6 +249,18 @@ diloven = Element(
         (nitrogen, 1 / 3),
     ],
     group=ElementGroup.TOXIN,
+)
+diphenhydramine = Element(
+    "Дифенгидрамин",
+    [
+        (oil, 1 / 3),
+        (ethanol, 1 / 3),
+        (carbon, 1 / 3),
+        (diethylamine, 1 / 3),
+        (salt, 1 / 3),
+    ],
+    group=ElementGroup.TOXIN,
+    temperature="выше 378К",
 )
 hyronalyne = Element(
     "Хироналин",
