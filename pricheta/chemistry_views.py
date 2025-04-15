@@ -47,7 +47,7 @@ def index(request):
 
     return render(
         request,
-        "pricheta/content.html",
+        "pricheta/chemistry.html",
         {
             "grouped_elements": GROUPED_ELEMENTS,
             "recipe": recipe,

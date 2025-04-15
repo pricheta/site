@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Две кнопки</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        h1 {
+            color: #555;
+            margin: 0 0 25px 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .chem_btn {
+            background-color: #FF6B00;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .doc_btn {
+            background-color: #53c5ec;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+            font-size: 14px;
+        }
+                .footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Главное меню</h1>
+
+        <div class="buttons-container">
+            <a href="/doctor" class="doc_btn">Памятка врача</a>
+            <a href="/chemistry" class="chem_btn">Калькулятор химика</a>
+        </div>
+
+        <div class="footer">
+          <a href="https://github.com/pricheta/site" target="_blank">Исходный код на GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
