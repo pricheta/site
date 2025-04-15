@@ -10,7 +10,7 @@ AVAILABLE_ELEMENT_GROUPS = [
     ElementGroup.TOXIN,
     ElementGroup.GASP,
     ElementGroup.CELLULAR,
-    ElementGroup.BOTANIC,
+    ElementGroup.CRIO,
     ElementGroup.OTHER,
 ]
 

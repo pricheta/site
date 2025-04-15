@@ -7,7 +7,7 @@ class ElementGroup(StrEnum):
     TOXIN = "Токсины"
     GASP = "Нехватка воздуха"
     CELLULAR = "Клеточный"
-    BOTANIC = "Ботаник"
+    CRIO = "Крио"
     OTHER = "Остальное"
     HIDDEN = "Скрытые"
 
@@ -154,7 +154,7 @@ unstable_mutagen = Element(
         (phosphorus, 1 / 3),
         (radium, 1 / 3),
     ],
-    group=ElementGroup.BOTANIC,
+    group=ElementGroup.OTHER,
 )
 bicaridine = Element(
     "Бикаридин",
@@ -311,6 +311,15 @@ falanhymyne = Element(
         (ethanol, 1 / 3),
     ],
     group=ElementGroup.CELLULAR,
+)
+cryoxadon = Element(
+    "Криоксадон",
+    [
+        (water, 1 / 3),
+        (dexolyne, 1 / 3),
+        (oxygen, 1 / 3),
+    ],
+    group=ElementGroup.CRIO,
 )
 space_cleaner = Element(
     "Космический очиститель",
