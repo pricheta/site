@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медицинская памятка | SpaceStation 14</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.2;
+            color: #000;
+            background-color: #fff;
+            margin: 0;
+            padding: 5px;
+            font-size: 13px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 5px;
+            max-width: 1900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 2px 0 5px;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .damage-category {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 3px;
+        }
+
+        .category-title {
+            background-color: #53c5ec;
+            color: #fff;
+            padding: 3px;
+            margin: 0;
+            text-align: center;
+            font-size: 13px;
+            border-radius: 2px;
+        }
+
+        .damage-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 3px 0;
+        }
+
+        .damage-table th {
+            background-color: #f0f0f0;
+            padding: 2px 3px;
+            text-align: left;
+            font-size: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .damage-table td {
+            padding: 1px 3px;
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+        }
+
+        .damage-name {
+            width: 100%;
+        }
+
+        .damage-effect {
+            text-align: right;
+            padding-right: 5px;
+        }
+
+        .damage-dose {
+            text-align: right;
+            color: #d00;
+        }
+
+        .unknown {
+            color: #777;
+            font-style: italic;
+        }
+
+        .subcategory {
+            margin-top: 5px;
+            font-size: 12px;
+            padding-left: 2px;
+            color: #444;
+            border-left: 2px solid #53c5ec;
+        }
+
+        @media (max-width: 1600px) {
+            .container {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Медицинская памятка SpaceStation 14</h1>
+        <h1>Черным цветом представлено влияние на показатель за унцию, в квадратных скобках максимальная безопасная дозировка</h1>
+
+        <!-- Механические повреждения -->
+        <div class="damage-category">
+            <div class="category-title">Механические</div>
+
+            <div class="subcategory">Ушибы</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Бикаридин</td>
+                    <td class="damage-effect">-4</td>
+                    <td class="damage-dose">[15]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Бруизин</td>
+                    <td class="damage-effect">-7</td>
+                    <td class="damage-dose">[10]</td>
+                </tr>
+            </table>
+
+            <div class="subcategory">Уколы</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Бикаридин</td>
+                    <td class="damage-effect">-4</td>
+                    <td class="damage-dose">[15]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Пунктураз</td>
+                    <td class="damage-effect">-8</td>
+                    <td class="damage-dose">[10]</td>
+                </tr>
+            </table>
+
+            <div class="subcategory">Порезы</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Бикаридин</td>
+                    <td class="damage-effect">-4</td>
+                    <td class="damage-dose">[15]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Лацеринол</td>
+                    <td class="damage-effect">-3</td>
+                    <td class="damage-dose">[10]</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Физические повреждения -->
+        <div class="damage-category">
+            <div class="category-title">Физические</div>
+
+            <div class="subcategory">Обморожение</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Дермалин</td>
+                    <td class="damage-effect">-3</td>
+                    <td class="damage-dose">[10]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Лепоразин</td>
+                    <td class="damage-effect">-8</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+            </table>
+
+            <div class="subcategory">Термические</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Дермалин</td>
+                    <td class="damage-effect">-3</td>
+                    <td class="damage-dose">[10]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Пиразин</td>
+                    <td class="damage-effect">-10</td>
+                    <td class="damage-dose">[15]</td>
+                </tr>
+            </table>
+
+            <div class="subcategory">Электрические</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Дермалин</td>
+                    <td class="damage-effect">-3</td>
+                    <td class="damage-dose">[10]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Инсузин</td>
+                    <td class="damage-effect">-8</td>
+                    <td class="damage-dose">[10]</td>
+                </tr>
+            </table>
+
+            <div class="subcategory">Кислотные</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Сигинат</td>
+                    <td class="damage-effect">-6</td>
+                    <td class="damage-dose">[15]</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Токсины -->
+        <div class="damage-category">
+            <div class="category-title">Токсины</div>
+
+            <div class="subcategory">Яды</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Диловен</td>
+                    <td class="damage-effect">-2</td>
+                    <td class="damage-dose">[15]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Дифенгидрамин</td>
+                    <td class="damage-effect">-6</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Этилредоксразин</td>
+                    <td class="damage-effect">-1</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+            </table>
+
+            <div class="subcategory">Радиация</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Аритразин</td>
+                    <td class="damage-effect">-6</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Хироналин</td>
+                    <td class="damage-effect">-2</td>
+                    <td class="damage-dose">[30]</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Нехватка воздуха -->
+        <div class="damage-category">
+            <div class="category-title">Нехватка воздуха</div>
+
+            <div class="subcategory">Удушение</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Дексалин</td>
+                    <td class="damage-effect">-3</td>
+                    <td class="damage-dose">[20]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Дексалин плюс</td>
+                    <td class="damage-effect">-13</td>
+                    <td class="damage-dose">[25]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Инапровалин</td>
+                    <td class="damage-effect">-10</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+            </table>
+
+            <div class="subcategory">Недостаток крови</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Физраствор</td>
+                    <td class="damage-effect unknown">?</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Железо</td>
+                    <td class="damage-effect unknown">?</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+                <tr>
+                    <td class="damage-name">Медь (арахниды)</td>
+                    <td class="damage-effect unknown">?</td>
+                    <td class="damage-dose unknown">[-]</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Генетические повреждения -->
+        <div class="damage-category">
+            <div class="category-title">Генетические</div>
+
+            <div class="subcategory">Клеточные</div>
+            <table class="damage-table">
+                <tr>
+                    <td class="damage-name">Фалангимин</td>
+                    <td class="damage-effect">-3</td>
+                    <td class="damage-dose">[0]</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://github.com/pricheta/site" target="_blank">Исходный код на GitHub</a>
+    </div>
+
+</body>
+</html>
