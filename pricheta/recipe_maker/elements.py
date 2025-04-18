@@ -53,6 +53,7 @@ nitrogen = Element("Азот")
 radium = Element("Радий")
 ethanol = Element("Этанол")
 welding_fuel = Element("Сварочное топливо")
+zombie_blood = Element("Кровь зомби")
 
 
 oil = Element(
@@ -326,6 +327,15 @@ space_cleaner = Element(
     [
         (water, 1 / 2),
         (ammonia, 1 / 2),
+    ],
+    group=ElementGroup.OTHER,
+)
+ambuzol = Element(
+    "Амбузол",
+    [
+        (diloven, 1 / 4),
+        (ammonia, 1 / 4),
+        (zombie_blood, 2 / 4),
     ],
     group=ElementGroup.OTHER,
 )
