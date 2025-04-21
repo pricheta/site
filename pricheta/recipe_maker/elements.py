@@ -54,6 +54,7 @@ radium = Element("Радий")
 ethanol = Element("Этанол")
 welding_fuel = Element("Сварочное топливо")
 zombie_blood = Element("Кровь зомби")
+iodine = Element("Йод")
 
 
 oil = Element(
@@ -336,6 +337,32 @@ ambuzol = Element(
         (diloven, 1 / 4),
         (ammonia, 1 / 4),
         (zombie_blood, 2 / 4),
+    ],
+    group=ElementGroup.OTHER,
+)
+ephedrine = Element(
+    "Эфедрин",
+    [
+        (oil, 1 / 4),
+        (sugar, 1 / 4),
+        (diethylamine, 1 / 4),
+        (hydrogen, 1 / 4),
+    ],
+)
+deoxyephedrine = Element(
+    "Дезоксиэфедрин",
+    [
+        (phosphorus, 1 / 4),
+        (iodine, 1 / 4),
+        (ephedrine, 1 / 4),
+        (carbon, 1 / 4),
+    ],
+)
+dilometh = Element(
+    "Диломет",
+    [
+        (deoxyephedrine, 1 / 2),
+        (diloven, 1 / 2),
     ],
     group=ElementGroup.OTHER,
 )
