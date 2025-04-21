@@ -55,6 +55,8 @@ ethanol = Element("Этанол")
 welding_fuel = Element("Сварочное топливо")
 zombie_blood = Element("Кровь зомби")
 iodine = Element("Йод")
+omnisin = Element("Омнизин")
+blood = Element("Кровь")
 
 
 oil = Element(
@@ -331,6 +333,16 @@ doxarubixadone = Element(
         (unstable_mutagen, 1 / 2),
     ],
     group=ElementGroup.CRIO,
+)
+necrosol = Element(
+    "Некрозол",
+    [
+        (omnisin, 1 / 2),
+        (cryoxadon, 2 / 2),
+        (blood, 3 / 2),
+    ],
+    group=ElementGroup.CRIO,
+    temperature="выше 370К",
 )
 space_cleaner = Element(
     "Космический очиститель",
