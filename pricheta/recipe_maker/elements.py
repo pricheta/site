@@ -148,6 +148,7 @@ dexolyne = Element(
         (oxygen, 2 / 3),
     ],
     catalyst=(plasma, 1),
+    group=ElementGroup.GASP,
 )
 unstable_mutagen = Element(
     "Нестабильный мутаген",
@@ -303,7 +304,7 @@ saline_solution = Element(
         (water, 4 / 5),
         (salt, 1 / 5),
     ],
-    group=ElementGroup.GASP,
+    group=ElementGroup.OTHER,
 )
 falanhymyne = Element(
     "Фалангимин",
@@ -357,6 +358,7 @@ deoxyephedrine = Element(
         (ephedrine, 1 / 4),
         (carbon, 1 / 4),
     ],
+    temperature="выше 370К",
 )
 dilometh = Element(
     "Диломет",
