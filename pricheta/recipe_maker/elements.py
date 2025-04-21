@@ -57,6 +57,7 @@ zombie_blood = Element("Кровь зомби")
 iodine = Element("Йод")
 omnisin = Element("Омнизин")
 blood = Element("Кровь")
+aloe = Element("Алоэ")
 
 
 oil = Element(
@@ -343,6 +344,15 @@ necrosol = Element(
     ],
     group=ElementGroup.CRIO,
     temperature="выше 370К",
+)
+aloxadon = Element(
+    "Алоксадон",
+    [
+        (siginate, 2 / 4),
+        (cryoxadon, 1 / 4),
+        (aloe, 2 / 4),
+    ],
+    group=ElementGroup.CRIO,
 )
 space_cleaner = Element(
     "Космический очиститель",
