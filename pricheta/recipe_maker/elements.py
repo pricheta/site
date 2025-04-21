@@ -324,6 +324,14 @@ cryoxadon = Element(
     ],
     group=ElementGroup.CRIO,
 )
+doxarubixadone = Element(
+    "Доксарубиксадон",
+    [
+        (cryoxadon, 1 / 2),
+        (unstable_mutagen, 1 / 2),
+    ],
+    group=ElementGroup.CRIO,
+)
 space_cleaner = Element(
     "Космический очиститель",
     [
